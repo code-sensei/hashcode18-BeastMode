@@ -37,3 +37,18 @@ for index in range(1, len(file_lines)):
     steps_moved_y = int(start_y) - int(vehicle_start_y)
     steps_counter += steps_moved_x + steps_moved_y
     print('Steps: ' + str(steps_counter))
+
+    if steps_counter < int(earliest_start):
+        steps_counter + 1
+        print('Step counter waiting: ' + str(steps_counter))
+
+    elif steps_counter >= int(earliest_start):
+        steps_moved_x = int(dest_x) - int(start_x)
+        steps_moved_y = int(dest_y) - int(start_y)
+        steps_counter += steps_moved_x + steps_moved_y
+        print('Total steps moved: ' + str(steps_counter))
+        vehicle_start_x = dest_x
+        vehicle_start_y = dest_y
+    else:
+        print('Total steps moved: ' + str(steps_counter))
+
